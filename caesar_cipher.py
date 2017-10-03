@@ -9,7 +9,7 @@ def encrypt(message, key):
         A string containing the message that will be encrypted.
     key: integer
         An integer representing the distance to shift all of the letters
-                    contained in the string
+            contained in the string
         
     Returns
     -------
@@ -31,6 +31,8 @@ def decrypt(ciphertext, key):
     ciphertext: string
         The ciphertext that will be decrypted.
     key: integer
+        An integer representing the distance to shift all of the letters
+            contained in the string
     
     Returns
     -------
