@@ -36,3 +36,5 @@ db.fetch_characters_promise(true)
     .catch(function(error) {
         console.log(error.message);
     });
+
+console.log("Finished going through the script");

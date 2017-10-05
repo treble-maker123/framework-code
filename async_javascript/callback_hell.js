@@ -11,15 +11,15 @@ var db = require("./database");
 /*
     What this code may look like if written synchronously (blocking calls).
     
-    var characters = fetch_characters(true);
+    var characters = db.fetch_characters(true);
     var status = characters.map(function(character) {
-        return {character: character.name, alive: is_alive(character.id, true);
+        return { character: character.name, alive: db.is_alive(character.id, true); }
     });
     console.log("Everyone seems to be fine!");
 */
 
 ////////////////////////////////////////////////////////////////////////////////
-// Below is an example of a callback hell
+// Below is an example of a callback hell (heck?)
 ////////////////////////////////////////////////////////////////////////////////
 
 var status = [];
@@ -43,3 +43,5 @@ db.fetch_characters(true, function(err, data){
         });
     }
 });
+
+console.log("Finished going through the script");

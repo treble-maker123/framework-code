@@ -22,3 +22,5 @@ var db = require("./database");
         }
     });
 })();
+
+console.log("Finished going through the script");
