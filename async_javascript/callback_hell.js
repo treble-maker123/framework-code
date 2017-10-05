@@ -33,6 +33,7 @@ db.fetch_characters(true, function(err, data){
                 if(err) {
                    console.log(err.message);
                 } else {
+                    console.log(`Number ${res.id} seems to be fine`);
                     status.push({character: character.name, alive: res.isAlive});
                     if (status.length == data.length) {
                         console.log("Everyone seems to be fine!");

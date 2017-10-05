@@ -7,6 +7,32 @@
  * "node callback_hell.js"
  */
 
-function get_random_wait(min, max) {
-    return Math.floor(Math.random() * (max-min) + min);
-}
+var db = require("./database");
+
+var status = [];
+db.fetch_characters_promise(true)
+    .then(function(data) {
+        var characters = []; // created this to demonstrate promise chaining
+        data.forEach(function(character) {
+            characters.push(character);
+        })
+        return Promise.resolve(characters);
+    })
+    .then(function(characters) {
+        characters.forEach(function(character) {
+            db.is_alive_promise(character.id, true)
+                .then(function(res) {
+                    console.log(`Number ${res.id} seems to be fine.`);
+                    status.push({character: character.name, alive: res.isAlive});
+                    if (status.length == characters.length) {
+                        console.log("Everyone seems to be fine!");
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error.message);
+                });
+        });
+    })
+    .catch(function(error) {
+        console.log(error.message);
+    });
