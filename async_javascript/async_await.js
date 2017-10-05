@@ -2,7 +2,7 @@
  * An example demonstrating the use of async/await in Javascript, which is introduced 
  * with ECMAScript 8 (ES8)
  * 
- * To run this example, use Node v6.x
+ * To run this example, use Node v7.x
  * 
  * "node callback_hell.js"
  */
