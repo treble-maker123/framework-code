@@ -12,3 +12,7 @@
 
   A set of scripts demonstrate how to write (messy) asynchronous code in JavaScript, with the goal of 
   introducing the Promise feature from ES6, and async/await feature from ES8.
+
+* calculator.vue
+
+  A simple calculator written as a component in Vue.js. 

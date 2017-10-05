@@ -48,7 +48,11 @@
                 this.queue = ''
             },
             input: function (btn) {
-                this.queue += btn
+                var isNum = parseInt(btn) === btn
+                var isDec = btn === '.'
+                if (this.queue || isNum || isDec) {
+                    this.queue += btn
+                }
             },
             calculate: function () {
                 /* eslint-disable */
